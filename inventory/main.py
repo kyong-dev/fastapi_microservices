@@ -1,7 +1,7 @@
-from webbrowser import get
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from redis_om import get_redis_connection, HashModel
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
+from webbrowser import get
 
 app = FastAPI()
 
