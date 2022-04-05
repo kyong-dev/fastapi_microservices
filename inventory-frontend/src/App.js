@@ -1,62 +1,16 @@
-import logo from './logo.svg';
-import './index.css';
+import { Products } from "./components/Products";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ProductsCreate } from "./components/ProductsCreate";
+import { Orders } from "./components/Orders";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-        <div className="navbar-nav">
-          <div className="nav-item text-nowrap">
-            <a className="nav-link px-3" href="#">Sign out</a>
-          </div>
-        </div>
-      </header>
-      <div className="container-fluid">
-        <div className="row">
-          <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-            <div className="position-sticky pt-3">
-              <ul className="nav flex-column">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-home" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    Dashboard
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-
-          <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div className=""></div></div><div className="chartjs-size-monitor-shrink"><div className=""></div></div></div>
-
-            <h2>Section title</h2>
-            <div className="table-responsive">
-              <table className="table table-striped table-sm">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Header</th>
-                    <th scope="col">Header</th>
-                    <th scope="col">Header</th>
-                    <th scope="col">Header</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1,001</td>
-                    <td>random</td>
-                    <td>data</td>
-                    <td>placeholder</td>
-                    <td>text</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
-        </div>
-      </div>
-    </div>
-  );
+  return <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Products />} />
+      <Route path="/create" element={<ProductsCreate />} />
+      <Route path="/orders" element={<Orders />} />
+    </Routes>
+  </BrowserRouter>;
 }
 
 export default App;

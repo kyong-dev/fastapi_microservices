@@ -13,7 +13,6 @@ while True:
     try:
         results = redis.xreadgroup(group, key, {key: '>'}, None)
 
-        print(results)
         if results != []:
             for result in results:
                 obj = result[1][0][1]
